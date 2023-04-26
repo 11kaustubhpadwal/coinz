@@ -1,8 +1,8 @@
-# React Native Mobile Application
+### React Native Mobile Application
 
-# iOS and Android support
+### iOS and Android support
 
-# How to run locally?
+### How to run locally?
 
 - npm install
 - npm start
