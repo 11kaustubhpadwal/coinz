@@ -4,7 +4,7 @@ export const NavBarStyles = StyleSheet.create({
   wrapper: {
     flexDirection: "row",
     justifyContent: "center",
-    padding: 20,
+    padding: 12,
     columnGap: 35,
   },
   item: {

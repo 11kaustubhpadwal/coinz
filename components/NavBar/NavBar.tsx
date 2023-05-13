@@ -51,7 +51,7 @@ const NavBar = () => {
                 >
                   <Icon fill={isFocused ? Colors.Primary : Colors.Secondary} />
                   <Typography
-                    variant="h5"
+                    variant="sub1"
                     color={isFocused ? Colors.Primary : Colors.Secondary}
                   >
                     {route.name}
