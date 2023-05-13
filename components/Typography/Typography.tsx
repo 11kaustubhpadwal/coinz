@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 import { TextVariant, TypographyProps } from "./types";
 import { TypographyStyles } from "./stylesheet";
 import useFontLoader from "../../hooks/useFontLoader";
@@ -14,7 +14,12 @@ const Typography = (props: TypographyProps) => {
   }, [props.variant]);
 
   return (
-    areFontsLoaded && <Text style={TypographyStyles[variant]} {...props} />
+    areFontsLoaded && (
+      <Text
+        style={{ ...TypographyStyles[variant], color: props.color }}
+        {...props}
+      />
+    )
   );
 };
 

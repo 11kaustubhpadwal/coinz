@@ -14,4 +14,5 @@ export type TextVariant =
 
 export interface TypographyProps extends TextProps {
   variant: TextVariant;
+  color?: string;
 }

@@ -1,8 +1,7 @@
 import { Text } from "react-native";
 import LayoutWrapper from "../../components/LayoutWrapper";
-import { HomeProps } from "./types";
 
-const Home = (props: HomeProps) => {
+const Home = () => {
   return (
     <LayoutWrapper>
       <Text>Home</Text>
