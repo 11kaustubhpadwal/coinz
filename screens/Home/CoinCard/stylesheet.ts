@@ -14,5 +14,9 @@ export const CoinCardStyles = StyleSheet.create({
   image: { width: 40, height: 40, flex: 1 },
   column2: { flex: 3 },
   column3: { flex: 2, alignItems: "flex-end" },
-  svgImage: { flex: 1 },
+  icon: {
+    width: 32,
+    height: 32,
+    borderRadius: 8,
+  },
 });
