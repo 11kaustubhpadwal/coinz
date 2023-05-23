@@ -7,8 +7,9 @@ import CoinCard from "./CoinCard";
 import { useGetAllCoinsQuery } from "../../react-query/queries/coins";
 import InvestmentIcon from "../../assets/icons/InvestMentIcon";
 import loader from "../../assets/animated/loader.gif";
+import { HomeProps } from "./types";
 
-const Home = () => {
+const Home = ({ navigation }: HomeProps) => {
   const { data, isLoading } = useGetAllCoinsQuery();
 
   return (
@@ -37,7 +38,15 @@ const Home = () => {
         <View style={HomeStyles.listContainer}>
           <FlatList
             data={data.data.coins}
-            renderItem={({ item }) => <CoinCard key={item.uuid} coin={item} />}
+            renderItem={({ item }) => (
+              <CoinCard
+                key={item.uuid}
+                coin={item}
+                onPress={() => {
+                  navigation.navigate("CoinDetails", { coinId: item.uuid });
+                }}
+              />
+            )}
           />
         </View>
       )}
