@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const LayoutWrapperStyles = StyleSheet.create({
   layoutWrapper: {
-    padding: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
 });

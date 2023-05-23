@@ -5,7 +5,7 @@ export const CoinCardStyles = StyleSheet.create({
     padding: 18,
     borderRadius: 10,
     backgroundColor: "white",
-    marginBottom: 10,
+    marginBottom: 15,
     flexDirection: "row",
     alignItems: "center",
     columnGap: 15,

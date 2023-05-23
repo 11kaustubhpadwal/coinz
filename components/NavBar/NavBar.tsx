@@ -62,6 +62,7 @@ const NavBar = () => {
           </View>
         );
       }}
+      screenOptions={{ headerShown: false }}
     >
       <Tab.Screen name={Screens.Home} component={Home} />
       <Tab.Screen name={Screens.Market} component={Market} />
