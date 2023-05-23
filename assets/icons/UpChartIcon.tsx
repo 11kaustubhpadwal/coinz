@@ -1,7 +1,7 @@
 import { View } from "react-native";
-import Svg, { Path, SvgProps } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
 
-const UpChartIcon = (props: SvgProps) => {
+const UpChartIcon = () => {
   return (
     <View>
       <Svg width="52" height="29" viewBox="0 0 52 29" fill="none">

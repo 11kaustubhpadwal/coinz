@@ -5,4 +5,5 @@ export enum Colors {
   Red = "#D90429",
   Border = "#DFE2E4",
   Secondary = "#6C757D",
+  Purple = "#9300F5",
 }

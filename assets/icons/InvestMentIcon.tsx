@@ -1,7 +1,7 @@
 import { View } from "react-native";
-import Svg, { Path, SvgProps } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
 
-const InvestmentIcon = (props: SvgProps) => {
+const InvestmentIcon = () => {
   return (
     <View>
       <Svg width="75" height="75" viewBox="0 0 75 75" fill="none">

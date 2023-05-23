@@ -30,4 +30,16 @@ export const ButtonStyles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 16,
   },
+  secondary: {
+    paddingLeft: 5,
+    paddingRight: 5,
+    paddingTop: 10,
+    paddingBottom: 10,
+    backgroundColor: "#fff",
+    borderRadius: 4,
+    textAlign: "center",
+    fontFamily: "Circular-Std-Medium",
+    fontSize: 14,
+    lineHeight: 16,
+  },
 });
