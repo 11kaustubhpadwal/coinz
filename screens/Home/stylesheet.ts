@@ -17,10 +17,4 @@ export const HomeStyles = StyleSheet.create({
   button: { width: "35%" },
   listContainer: { paddingTop: 20, paddingBottom: 76 },
   investmentIcon: { position: "absolute", top: 70, left: 290 },
-  loader: {
-    width: 75,
-    height: 75,
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
 });
