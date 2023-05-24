@@ -5,7 +5,7 @@ import { useGetCoinByIdQuery } from "../../react-query/queries/coins";
 import Loader from "../../components/Loader";
 import { Pressable, View } from "react-native";
 import BackIcon from "../../assets/icons/BackIcon";
-import React, { useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import { CoinDetailsStyles } from "./stylesheet";
 import { formatPrice } from "../Home/CoinCard/utils";
 import { Colors } from "../../utils/colors";
@@ -21,14 +21,19 @@ const CoinDetails = ({ route, navigation }: CoinDetailsProps) => {
 
   const coinDetails = useMemo(() => data?.data.coin, [data]);
 
+  const goBackToPreviousScreen = useCallback(
+    () => navigation.goBack(),
+    [navigation]
+  );
+
   return (
     <LayoutWrapper>
       {isLoading ? (
         <Loader />
       ) : (
-        <View>
+        <View style={CoinDetailsStyles.wrapper}>
           <View style={CoinDetailsStyles.topBar}>
-            <Pressable onPress={() => navigation.navigate("Home")}>
+            <Pressable onPress={goBackToPreviousScreen}>
               <BackIcon />
             </Pressable>
             <View
@@ -91,10 +96,20 @@ const CoinDetails = ({ route, navigation }: CoinDetailsProps) => {
               Total: {coinDetails?.supply.total || "-"}
             </Typography>
           </View>
-          <View style={CoinDetailsStyles.divider2} />
-          <Button variant={"primary"} text={"BUY"} />
+          <View style={CoinDetailsStyles.actionButtons}>
+            <View style={CoinDetailsStyles.column1}>
+              <Button variant={"primary"} text={"BUY"} />
+            </View>
+            <View style={CoinDetailsStyles.column2}>
+              <Button variant={"primary"} text={"SELL"} />
+            </View>
+          </View>
           <View style={CoinDetailsStyles.divider3} />
-          <Button variant={"primary"} text={"SELL"} />
+          <Button
+            variant={"outlined"}
+            text={"Back"}
+            onPress={goBackToPreviousScreen}
+          />
         </View>
       )}
     </LayoutWrapper>

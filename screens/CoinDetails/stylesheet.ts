@@ -28,4 +28,16 @@ export const CoinDetailsStyles = StyleSheet.create({
     marginBottom: 8,
     elevation: 1,
   },
+  wrapper: {
+    marginTop: 10,
+  },
+  actionButtons: {
+    flexDirection: "row",
+    columnGap: 15,
+    marginTop: 18,
+  },
+  column1: {
+    flex: 3,
+  },
+  column2: { flex: 3 },
 });
