@@ -1,4 +1,4 @@
-import { FlatList, View, Image } from "react-native";
+import { FlatList, View } from "react-native";
 import LayoutWrapper from "../../components/LayoutWrapper";
 import Button from "../../components/Button";
 import Typography from "../../components/Typography";
@@ -6,8 +6,8 @@ import { HomeStyles } from "./stylesheet";
 import CoinCard from "./CoinCard";
 import { useGetAllCoinsQuery } from "../../react-query/queries/coins";
 import InvestmentIcon from "../../assets/icons/InvestMentIcon";
-import loader from "../../assets/animated/loader.gif";
 import { HomeProps } from "./types";
+import Loader from "../../components/Loader";
 
 const Home = ({ navigation }: HomeProps) => {
   const { data, isLoading } = useGetAllCoinsQuery();
@@ -33,7 +33,7 @@ const Home = ({ navigation }: HomeProps) => {
         </View>
       </View>
       <Typography variant={"h3"}>Trending Coins</Typography>
-      {isLoading && <Image source={loader} style={HomeStyles.loader} />}
+      {isLoading && <Loader />}
       {data && data.data.stats.total > 0 && (
         <View style={HomeStyles.listContainer}>
           <FlatList
