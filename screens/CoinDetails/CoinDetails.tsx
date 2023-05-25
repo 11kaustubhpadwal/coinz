@@ -80,35 +80,35 @@ const CoinDetails = ({ route, navigation }: CoinDetailsProps) => {
           </Typography>
           <View style={CoinDetailsStyles.divider3} />
           <SupplyCard
-            text={`Maximum: ${coinDetails?.supply.max || "-"}`}
+            text={`Maximum: ${coinDetails?.supply.max || "N/A"}`}
             color={Colors.Orange}
           />
           <SupplyCard
-            text={`Circulating: ${coinDetails?.supply.circulating || "-"}`}
+            text={`Circulating: ${coinDetails?.supply.circulating || "N/A"}`}
             color={Colors.Secondary}
           />
           <SupplyCard
-            text={`Confirmed: ${coinDetails?.supply.confirmed || "-"}`}
+            text={`Confirmed: ${
+              (coinDetails?.supply.confirmed ? "Yes" : "No") || "N/A"
+            }`}
             color={Colors.Green}
           />
           <SupplyCard
-            text={`Total: ${coinDetails?.supply.total || "-"}`}
+            text={`Total: ${coinDetails?.supply.total || "N/A"}`}
             color={Colors.Primary}
           />
           <View style={CoinDetailsStyles.actionButtons}>
             <View style={CoinDetailsStyles.column1}>
+              <Button
+                variant={"outlined"}
+                text={"Back"}
+                onPress={goBackToPreviousScreen}
+              />
+            </View>
+            <View style={CoinDetailsStyles.column1}>
               <Button variant={"primary"} text={"BUY"} />
             </View>
-            <View style={CoinDetailsStyles.column2}>
-              <Button variant={"primary"} text={"SELL"} />
-            </View>
           </View>
-          <View style={CoinDetailsStyles.divider3} />
-          <Button
-            variant={"outlined"}
-            text={"Back"}
-            onPress={goBackToPreviousScreen}
-          />
         </View>
       )}
     </LayoutWrapper>

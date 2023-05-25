@@ -1,7 +1,7 @@
 import { View } from "react-native";
-import Svg, { Path, SvgProps } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
 
-const BackIcon = (props: SvgProps) => {
+const BackIcon = () => {
   return (
     <View>
       <Svg width="10" height="16" viewBox="0 0 10 16" fill="none">
