@@ -3,7 +3,7 @@ import LayoutWrapper from "../../components/LayoutWrapper";
 import Button from "../../components/Button";
 import Typography from "../../components/Typography";
 import { HomeStyles } from "./stylesheet";
-import CoinCard from "./CoinCard";
+import CoinCard from "../../components/CoinCard";
 import { useGetAllCoinsQuery } from "../../react-query/queries/coins";
 import InvestmentIcon from "../../assets/icons/InvestMentIcon";
 import { HomeProps } from "./types";

@@ -1,15 +1,15 @@
 import { View, Pressable } from "react-native";
 import { CoinCardProps } from "./types";
-import Typography from "../../../components/Typography";
+import Typography from "../Typography";
 import { formatPrice } from "./utils";
-import { Colors } from "../../../utils/colors";
+import { Colors } from "../../utils/colors";
 import { CoinCardStyles } from "./stylesheet";
-import UpChartIcon from "../../../assets/icons/UpChartIcon";
-import DownChartIcon from "../../../assets/icons/DownChartIcon";
+import UpChartIcon from "../../assets/icons/UpChartIcon";
+import DownChartIcon from "../../assets/icons/DownChartIcon";
 import { useMemo } from "react";
 
 const CoinCard = ({ coin, ...rest }: CoinCardProps) => {
-  const isMarketValueDown = useMemo(() => coin.change.startsWith("-"), [coin]);
+  const isMarketValueDown = useMemo(() => coin.change?.startsWith("-"), [coin]);
 
   return (
     <Pressable {...rest}>

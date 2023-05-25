@@ -14,4 +14,5 @@ export const MarketStyles = StyleSheet.create({
   column1: {
     flex: 1,
   },
+  listContainer: { paddingTop: 20, paddingBottom: 136 },
 });

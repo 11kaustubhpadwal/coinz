@@ -7,9 +7,9 @@ import { Pressable, View } from "react-native";
 import BackIcon from "../../assets/icons/BackIcon";
 import React, { useCallback, useMemo } from "react";
 import { CoinDetailsStyles } from "./stylesheet";
-import { formatPrice } from "../Home/CoinCard/utils";
+import { formatPrice } from "../../components/CoinCard/utils";
 import { Colors } from "../../utils/colors";
-import Button from "../../components/Button/Button";
+import Button from "../../components/Button";
 import SupplyCard from "./SupplyCard";
 
 const CoinDetails = ({ route, navigation }: CoinDetailsProps) => {

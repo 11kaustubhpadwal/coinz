@@ -95,3 +95,8 @@ export interface Supply {
   total: string;
   max: string;
 }
+
+export interface GetAllCoinsWithFiltersQueryParams {
+  timePeriod: string;
+  orderBy: string;
+}

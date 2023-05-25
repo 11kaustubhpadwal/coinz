@@ -1,7 +1,12 @@
 import { PressableProps } from "react-native";
+import { GetAllCoinsWithFiltersQueryParams } from "../../../api/services/coins/types";
 
 export interface FilterProps extends PressableProps {
-  name: Filters;
+  filterName: Filters;
+  setQueryParams: React.Dispatch<
+    React.SetStateAction<GetAllCoinsWithFiltersQueryParams>
+  >;
+  queryParams: GetAllCoinsWithFiltersQueryParams;
 }
 
 export enum Filters {
