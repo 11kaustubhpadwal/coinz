@@ -33,6 +33,7 @@ const Filter = ({ name, ...rest }: FilterProps) => {
         visible={modalVisible}
         transparent
         onRequestClose={closeModal}
+        statusBarTranslucent
       >
         <View style={FilterStyles.modalWrapper}>
           <View style={FilterStyles.modal}>
