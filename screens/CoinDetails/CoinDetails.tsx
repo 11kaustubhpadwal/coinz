@@ -10,6 +10,7 @@ import { CoinDetailsStyles } from "./stylesheet";
 import { formatPrice } from "../Home/CoinCard/utils";
 import { Colors } from "../../utils/colors";
 import Button from "../../components/Button/Button";
+import SupplyCard from "./SupplyCard";
 
 const CoinDetails = ({ route, navigation }: CoinDetailsProps) => {
   const { data, isLoading } = useGetCoinByIdQuery(route.params.coinId);
@@ -42,7 +43,9 @@ const CoinDetails = ({ route, navigation }: CoinDetailsProps) => {
                 backgroundColor: coinDetails?.color,
               }}
             />
-            <Typography variant={"h4"}>{coinDetails?.name}</Typography>
+            <View style={CoinDetailsStyles.coinName}>
+              <Typography variant={"h4"}>{coinDetails?.name}</Typography>
+            </View>
             <View style={CoinDetailsStyles.symbol}>
               <Typography
                 variant={"sub1"}
@@ -76,26 +79,22 @@ const CoinDetails = ({ route, navigation }: CoinDetailsProps) => {
             Supply
           </Typography>
           <View style={CoinDetailsStyles.divider3} />
-          <View style={CoinDetailsStyles.supplyCard}>
-            <Typography variant="h5" color={Colors.Orange}>
-              Maximum: {coinDetails?.supply.max || "-"}
-            </Typography>
-          </View>
-          <View style={CoinDetailsStyles.supplyCard}>
-            <Typography variant="h5" color={Colors.Secondary}>
-              Circulating: {coinDetails?.supply.circulating || "-"}
-            </Typography>
-          </View>
-          <View style={CoinDetailsStyles.supplyCard}>
-            <Typography variant="h5" color={Colors.Green}>
-              Confirmed: {coinDetails?.supply.confirmed || "-"}
-            </Typography>
-          </View>
-          <View style={CoinDetailsStyles.supplyCard}>
-            <Typography variant="h5" color={Colors.Primary}>
-              Total: {coinDetails?.supply.total || "-"}
-            </Typography>
-          </View>
+          <SupplyCard
+            text={`Maximum: ${coinDetails?.supply.max || "-"}`}
+            color={Colors.Orange}
+          />
+          <SupplyCard
+            text={`Circulating: ${coinDetails?.supply.circulating || "-"}`}
+            color={Colors.Secondary}
+          />
+          <SupplyCard
+            text={`Confirmed: ${coinDetails?.supply.confirmed || "-"}`}
+            color={Colors.Green}
+          />
+          <SupplyCard
+            text={`Total: ${coinDetails?.supply.total || "-"}`}
+            color={Colors.Primary}
+          />
           <View style={CoinDetailsStyles.actionButtons}>
             <View style={CoinDetailsStyles.column1}>
               <Button variant={"primary"} text={"BUY"} />
